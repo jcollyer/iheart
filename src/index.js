@@ -4,8 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux'
 import reducers from './reducers'
 import router from './router';
-
-const store = createStore(reducers)
+import store from './store'
 // const appElement = document.getElementById('app')
 
 // function render() {
