@@ -3,9 +3,11 @@ import { connect } from 'react-redux'
 import Search from './search'
 import { loadArtistSearch } from '../actions/artists'
 import request from 'superagent'
+import Artist from './artist'
 
 class Artists extends Component {
   search(evt){
+    evt.preventDefault()
     var that = this
     var string = document.getElementById("searchInput").value
     if(string != ""){
@@ -26,10 +28,9 @@ class Artists extends Component {
         {artists.map((artist,i)=>{
           const imgUrl = "http://iscale.iheart.com/catalog/artist/" + artist.artistId + "?ops=fit(250,0)"
           return (
-            <span key={i}>
-              <li>{artist.artistName}</li>
-              <img src={imgUrl} />
-            </span>
+            <div className="responsiveContainer">
+              <Artist key={i} name={artist.artistName} img={imgUrl} />
+            </div>
           )
         })}
       </span>

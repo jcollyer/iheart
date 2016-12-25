@@ -1,0 +1,44 @@
+* {box-sizing: border-box;}
+.search{
+  max-width: 300px;
+  margin: 0 auto;
+  height: 60px;
+  form {
+    input {
+      border: 1px solid #999;
+      padding: 5px 10px;
+      margin: 5px;
+    }
+    button {
+      border: none;
+      padding: 6px;
+    }
+  }
+}
+.responsiveContainer{
+  .responsive {
+    float: left;
+    position: relative;
+    width: 33.33%;
+    .artist{
+      background: rgba(255,255,255,0.5);
+      bottom: 0px;
+      padding: 10px;
+      position: absolute;
+      width: 100%;
+      text-align: center;
+    }
+    .image {
+      margin: 0 auto;
+      max-width: 250px;
+      img {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 768px){
+      width: 50%;
+    }
+  }
+
+}
