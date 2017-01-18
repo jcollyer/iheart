@@ -4,9 +4,9 @@ import { connect } from 'react-redux'
 export default(props) => {
   return (
     <div className="search">
-      <form onSubmit={props.search}>
-        <input type="text" id="searchInput" />
-        <button type="submit">Search</button>
+      <form>
+        <label for="searchInput">SEARCH</label>
+        <input type="text" name="searchInput" onKeyDown={props.search} />
       </form>
     </div>
   )

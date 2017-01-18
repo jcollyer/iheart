@@ -7,9 +7,7 @@ import Artist from './artist'
 
 class Artists extends Component {
   search(evt){
-    evt.preventDefault()
-    var that = this
-    var string = document.getElementById("searchInput").value
+    var string = evt.target.value
     if(string != ""){
       const url = "http://api-3283.iheart.com/api/v1/catalog/searchAll?keywords="+string+"&queryTrack=false&queryBundle=false&queryArtist=true&queryStation=false&queryFeaturedStation=false&queryTalkShow=false&queryTalkTheme=false&queryKeyword=false&countryCode=US"
       request
@@ -28,8 +26,8 @@ class Artists extends Component {
         {artists.map((artist,i)=>{
           const imgUrl = "http://iscale.iheart.com/catalog/artist/" + artist.artistId + "?ops=fit(250,0)"
           return (
-            <div className="responsiveContainer">
-              <Artist key={i} name={artist.artistName} img={imgUrl} />
+            <div className="responsiveContainer" key={i}>
+              <Artist name={artist.artistName} img={imgUrl} />
             </div>
           )
         })}
